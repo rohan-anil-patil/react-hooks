@@ -1,17 +1,11 @@
 import React from "react";
-import "./Card.css"
+import "./Card.css";
 
-function Card({ title, thumbnailUrl }) {
-  const fallbackImage = "https://via.placeholder.com/150";
+function Card({ author, download_url }) {
   return (
     <div className="card">
-      <img
-        src={thumbnailUrl || fallbackImage}
-        alt={title}
-        className="card-image"
-        onError={(e) => (e.target.src = fallbackImage)}
-      />
-      <p>{title}</p>
+      <img src={download_url} alt={author} className="card-image" />
+      <p>{author}</p>
     </div>
   );
 }

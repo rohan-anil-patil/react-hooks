@@ -4,9 +4,7 @@ import Card from "./components/Card";
 import "./App.css";
 
 function App() {
-  const { data, loading, error } = useFetch(
-    "https://jsonplaceholder.typicode.com/photos"
-  );
+  const { data, loading, error } = useFetch("https://picsum.photos/v2/list");
 
   if (loading) {
     return <p className="loading-error">Loading...</p>;
@@ -25,8 +23,8 @@ function App() {
         {data.map((item) => (
           <Card
             key={item.id}
-            title={item.title}
-            thumbnailUrl={item.thumbnailUrl}
+            author={item.author}
+            download_url={item.download_url}
           />
         ))}
       </div>
